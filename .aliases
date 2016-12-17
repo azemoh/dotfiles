@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias cd..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Git
+alias g="git"
+alias gcb="git checkout -b"
+alias gsc="git commit -S -m"
+alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias undopush="git push -f origin HEAD^:master" # Undo a `git push`
+
+# Utils
+alias vs="code"
+alias hosts="sudo $EDITOR /etc/hosts"
+alias s="python -m SimpleHTTPServer" # Python server
+
+# Rails 
+alias rails-pg="rails new -d postgresql -T"

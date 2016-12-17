@@ -1,0 +1,29 @@
+# git credential file
+.gitconfig.local
+
+# Node.js
+node_modules
+npm-debug.log
+bower_components
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Compiled Python files
+*.pyc
+
+# fish shell
+fishd.*
+.config/fish/fish_history
+fish/fish_history
+
+# random
+shilocation
+
+# Environment vars
+.env
