@@ -1,3 +1,4 @@
+source ~/.profile
 # Configuring Our Prompt
 # ======================
 
@@ -186,5 +187,3 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
 # Yarn package manager
 export PATH="$PATH:$HOME/.yarn/bin"
-
-  
