@@ -27,6 +27,3 @@ shilocation
 
 # Environment vars
 .env
-
-# VSCode
-.vscode
