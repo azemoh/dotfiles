@@ -27,3 +27,6 @@ shilocation
 
 # Environment vars
 .env
+
+# Intellij
+.idea/
