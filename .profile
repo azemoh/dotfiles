@@ -1,5 +1,9 @@
 #!/bin/bash
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export VISUAL=vim
+export SVN_EDITOR=vim
+export GIT_EDITOR=vim
+export EDITOR=vim
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PGHOST=localhost
+export PATH="$PATH:$HOME/.rbenv/bin" # Add RBENV to PATH for scripting

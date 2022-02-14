@@ -177,7 +177,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
   # RVM
   # Mandatory loading of RVM into the shell
   # This must be the last line of your bash_profile always
-  [[ -s "/Users/$USER/.rvm/scripts/rvm" ]] && source "/Users/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+  # [[ -s "/Users/$USER/.rvm/scripts/rvm" ]] && source "/Users/$USER/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Create a JAVA_HOME Variable, use, the name of the JDK folder
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
@@ -187,3 +187,6 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
 # Yarn package manager
 export PATH="$PATH:$HOME/.yarn/bin"
+
+export VISUAL=vim
+export EDITOR="$VISUAL"

@@ -19,3 +19,24 @@ alias s="python -m SimpleHTTPServer" # Python server
 
 # Rails 
 alias rails-pg="rails new -d postgresql -T"
+
+alias zsh-history="perl -lne 'm#: (\d+):\d+;(.+)# && printf "%s :: %s\n",scalar localtime $1,$2' $HISTFILE"
+
+alias drspec="PRY_ON_ERROR=1 WE_DEBUG=true HEADLESS=false FEATURE_TEST_MAX_WAIT_TIME=45 RSPEC_RETRY_COUNT=0 spring rspec --fail-fast"
+
+
+# Docker
+alias d="docker"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dex="docker exec"
+alias dex-bash="docker exec -it"
+
+# Docker Compose
+alias dc="docker-compose"
+alias dcex="docker-compose exec"
+alias dcex-bash="docker-compose exec -it"
+alias dcps="docker-compose ps"
+alias dclg="docker-compose logs"
+alias dcup="docker-compose up"
+alias dcdw="docker-compose down"

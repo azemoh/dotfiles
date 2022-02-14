@@ -1,3 +1,9 @@
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
+
+#!/bin/bash
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -5,9 +11,9 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="avit"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="philips"
+ZSH_THEME="fletcherm"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -50,7 +56,20 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails npm git-flow)
+plugins=(
+  git
+  rails
+  npm
+  git-flow
+  z
+  history
+  last-working-dir
+  gitignore
+  redis-cli
+  bundler
+  themes
+  colorize
+)
 
 # User configuration
 
@@ -81,18 +100,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="code ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-  . `brew --prefix`/etc/profile.d/z.sh
 
 export NVM_DIR="$HOME/.nvm"
   . "$(brew --prefix nvm)/nvm.sh"
 
 ### MY ALIASES
-source "/Users/$USER/.aliases"
-
+source ~/.aliases
+source ~/.profile
+source ~/.functions
+source ~/.keybindings
 
 # Create a JAVA_HOME Variable, use, the name of the JDK folder
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
@@ -101,13 +119,28 @@ export PATH=${JAVA_HOME}/bin:$PATH
 # Add the Android SDK to the PATH variable
 export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
 
-
-
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/joshua/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/joshua/google-cloud-sdk/path.zsh.inc'; fi
+export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/joshua/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/joshua/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.local/bin/:$PATH"
+
+# Postgresql
+export PATH="$(brew --prefix postgresql)@13/bin:$PATH"
+export LDFLAGS="-L$(brew --prefix postgresql)@13/lib"
+export CPPFLAGS="-I$(brew --prefix postgresql)@13/include"
+export PKG_CONFIG_PATH="$(brew --prefix postgresql)@13/lib/pkgconfig"
+
+source "$(brew --prefix)/etc/profile.d/z.sh"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env

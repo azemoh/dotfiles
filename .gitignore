@@ -30,3 +30,7 @@ shilocation
 
 # Intellij
 .idea/
+
+# Hyper
+.hyper_plugins/cache
+.hyper_plugins/package.json
